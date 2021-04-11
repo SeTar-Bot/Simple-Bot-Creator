@@ -1,11 +1,14 @@
 const fetch = require('node-fetch');
+const util = require('util');
+module.exports = {
 
-      function pad(n, z) {
+
+      pad: function(n, z) {
         z = z || 2;
         return ('00' + n).slice(-z);
-      }
+      },
 
-      function msToDate(s, isMs)
+      msToDate: function(s, isMs)
       {
         if(isMs)
         {
@@ -17,9 +20,9 @@ const fetch = require('node-fetch');
         var mins = s % 60;
         var hrs = (s - mins) / 60;
         return module.exports.pad(hrs) + ':' + module.exports.pad(mins) + ':' + module.exports.pad(secs);
-      }
+      },
 
-      function formatBytes(bytes, decimals = 2) {
+      formatBytes : function(bytes, decimals = 2) {
         if (bytes === 0) return '0 Bytes';
 
         const k = 1024;
@@ -29,16 +32,17 @@ const fetch = require('node-fetch');
         const i = Math.floor(Math.log(bytes) / Math.log(k));
 
         return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];   
-      }
+      },
 
-      function TokenValidator(token)
+      TokenValidator: function (token)
       {
-        fetch('https://discord.com/api/v6/users/@me', {
+        if(!token) return { result: false, message: 'No token Recived.' };
+        const nf = util.promisify(fetch);
+        
+        const data = nf('https://discord.com/api/v6/users/@me', {
             method: 'GET',
             headers: { 'Authorization': 'Bot ' + token  }
-        })
-        .then(res => res.json())
-        .then(data => {
+        }).json();
             const errorCodes = [0, 400, 401, 50035];
             if(data.code && errorCodes.includes(data.code))
             {
@@ -48,10 +52,11 @@ const fetch = require('node-fetch');
             {
                 return { 
                     result: true,
-                    data.id,
-                    data.username,
+                    id :data.id,
+                    username: data.username,
                     tag: data.username + data.discriminator
-            }
-        }); 
+                }
+            }            
       }
-
+    
+}
