@@ -6,15 +6,12 @@ function exitapp() {
 
 
 function getinfo() {
-  
-    const util = require("./utility");
-    // TOKEN
-    var bot_token = document.getElementById('token').value;
-    const tokenInfo = util.TokenValidator(bot_token);
-    if(!tokenInfo.result) //TODO: Show an Error Message (with return)
+
 
     var ownern = document.getElementById('owner_name_tag').value
     var owneri = document.getElementById('owner_id').value
+    // TOKEN
+    var bot_token = document.getElementById('token').value;
     // ACTIVITY
     var bot_status = document.getElementById('status').value;
     var bot_activity_name = document.getElementById('activity_name').value;
@@ -22,7 +19,7 @@ function getinfo() {
     // MSG
     var if_msg = document.getElementById('ifmsg').value
     var msg_send = document.getElementById('msgsend').value
-    
+
 
     const Discord = require('discord.js');
     const client = new Discord.Client();
@@ -66,15 +63,6 @@ function getinfo() {
 
     });
     
-    client.on('warn', warning => {
-        //TODO: Show an Error Message (warning is String)[e.g: `⚠ Warning: ${warning}`]
-    });
-
-    client.on('error', err => {
-        //TODO: Show an Error Message (Convert err to String)[e.g: `❌ Error: ${err.toString()}`]
-    });
-  
-    const ramUsage = process.memoryUsage().heapUsed / 1024 / 1024;
     
     setInterval(() => {
       document.getElementById('botname').innerHTML = client.user.tag;
@@ -88,9 +76,9 @@ function getinfo() {
       document.getElementById('channels').innerHTML = client.channels.cache.size;
       document.getElementById('guilds').innerHTML = client.guilds.cache.size;  
       // 
-      document.getElementById('up').innerHTML = util.msToDate(os.uptime(), true);
-      document.getElementById('memorytotal').innerHTML = util.formatBytes(os.totalmem());
-      document.getElementById('memoryus').innerHTML = Math.round(ramUsage * 100) / 100+" MB"
+      document.getElementById('up').innerHTML = os.uptime();
+      document.getElementById('memorytotal').innerHTML = os.totalmem();
+      document.getElementById('memoryus').innerHTML = os.freemem();
       document.getElementById('hostname').innerHTML = os.hostname();
       document.getElementById('platform').innerHTML = os.platform();
       document.getElementById('typesys').innerHTML = os.type();
