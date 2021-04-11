@@ -17,12 +17,16 @@
   "license": "CC0-1.0",
   "dependencies": {
     "bootstrap": "4.2.1",
-    "jquery": "3.3.1"
+    "jquery": "3.3.1",
+    "node-fetch": "2.6.1",
+    "discord.js": "12.5.3"
   },
   "devDependencies": {
     "browser-sync": "2.26.3",
     "electron": "^4.0.4",
     "electron-packager": "^15.2.0",
-    "gulp": "4.0.0"
+    "node-fetch": "2.6.1",
+    "gulp": "4.0.0",
+    "discord.js": "12.5.3"
   }
 }
