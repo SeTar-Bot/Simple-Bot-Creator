@@ -9,11 +9,13 @@ function exitapp() {
 
 function getinfo() {
 
+    // TOKEN
+    var bot_token = document.getElementById('token').value;
+    const tokenInfo = util.TokenValidator(bot_token);
+    if(tokenInfo.result) //TODO: Show an Error Message (with return)
 
     var ownern = document.getElementById('owner_name_tag').value
     var owneri = document.getElementById('owner_id').value
-    // TOKEN
-    var bot_token = document.getElementById('token').value;
     // ACTIVITY
     var bot_status = document.getElementById('status').value;
     var bot_activity_name = document.getElementById('activity_name').value;
@@ -21,7 +23,7 @@ function getinfo() {
     // MSG
     var if_msg = document.getElementById('ifmsg').value
     var msg_send = document.getElementById('msgsend').value
-
+    
 
     const Discord = require('discord.js');
     const client = new Discord.Client();
