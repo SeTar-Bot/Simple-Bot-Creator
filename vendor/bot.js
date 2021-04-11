@@ -1,5 +1,3 @@
-const util = require("./utility");
-
 function exitapp() {
   const remote = require('electron').remote
   let w = remote.getCurrentWindow()
@@ -8,7 +6,8 @@ function exitapp() {
 
 
 function getinfo() {
-
+  
+    const util = require("./utility");
     // TOKEN
     var bot_token = document.getElementById('token').value;
     const tokenInfo = util.TokenValidator(bot_token);
