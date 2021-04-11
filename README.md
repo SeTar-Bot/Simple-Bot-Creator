@@ -13,12 +13,8 @@
 </br>
 **پرکردن اطلاعات مورد نیاز برنامه `-`**
 </br>
-
 </br>
-**Patch Note V.2 :**
-</br>
-** `-` you have to install modules by yourself**
-</br>
-**Demo Preview :**
+**Demo Preview:**
 https://cdn.discordapp.com/attachments/829481761327022170/830143976962392114/bandicam_2021-04-09_22-17-32-854.mp4
+</br>
 https://cdn.discordapp.com/attachments/829481761327022170/830144094663213086/bandicam_2021-04-09_22-32-39-125.mp4
