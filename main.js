@@ -9,8 +9,7 @@ function createWindow () {
     icon: __dirname + './vendor/img/icon.png',
     webPreferences: {
       nodeIntegration: true
-    },
-    preload: path.join(__dirname, 'vendor/bot.js')
+    }
   })
   mainWindow.setMenuBarVisibility(false)
 
