@@ -1,0 +1,78 @@
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0000; 
+}
+       
+
+::-webkit-scrollbar-thumb {
+    background: #2c2f31; 
+}
+      
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2c2f31; 
+}
+*{
+    scroll-behavior: smooth;
+}
+
+.nav{
+    color: #ffff;
+}
+.botavatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url('../img/icon.png') no-repeat center / cover;
+}
+.card{
+    border-radius: 10px;
+}
+.card-columns{
+    padding: 30px;
+}
+.title{
+    text-align: center;
+}
+.pad{
+    /* padding: 20px; */
+    margin-top: 20px;
+}
+.down10{
+    margin-bottom: 10px;
+}
+.down20{
+    margin-bottom: 20px;
+}
+.online{
+    color: #43b581;
+}
+.dnd{
+    color: #f04747;
+}
+.idle{
+    color: #ed9e1b;
+}
+.invis{
+    color: #747f8d;
+}
+.token-img{
+    border-radius: 10px;
+    width: 700px;
+    height: 200px;
+}
+.presence-img{
+    width: 170px;
+    height: 150px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.type-img{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    margin-right: 10px;
+}

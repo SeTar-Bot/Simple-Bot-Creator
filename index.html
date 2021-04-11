@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Simple Bot Creator</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>  
+  <link href="vendor/style/main.css" rel="stylesheet">
+</head>
+
+<body>
+  
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="botavatar" id="botavatar"></a>
+      <ul class="navbar-nav mr-auto"></ul>
+    <a class="navbar-brand" id="botname">Bot Name</a>
+
+  </nav>
+
+  <!-- Page Content -->
+  <div id="start"  style="margin-top: 30px;" class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Welcome To Simple Bot Creator</h1>
+        <p class="lead">Created By Hadi.Az</p>
+        
+        <div class="down20 row">
+          <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Start</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-token" role="tab" aria-controls="profile">Bot Token</a>
+              <a class="list-group-item list-group-item-action" id="list-presence-list" data-toggle="list" href="#list-presence" role="tab" aria-controls="messages">Presence</a>
+              <a class="list-group-item list-group-item-action" id="list-end-list" data-toggle="list" href="#list-end" role="tab" aria-controls="end">End</a>
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Welcome To Simple Bot Creator</br>Please read this document before using the application</br>Any Question ?! Feel Free By Sending My Massage In Discord : -its^Hadi.Az^#1405</div> 
+              <div class="tab-pane fade" id="list-token" role="tabpanel" aria-labelledby="list-token-list">In this field, please enter the token that you got from the</br>discord.com/developers</br>Make sure you copy the token correctly !!</br><img class="token-img" src="./vendor/img/token.png" /></div>
+              <div class="tab-pane fade" id="list-presence" role="tabpanel" aria-labelledby="list-presence-list">Available types for Presence are the following</br>Status : <span class="online">online</span> / <span class="dnd">dnd</span> / <span class="idle">idle</span> / <span class="invis">invisible</span>
+              </br>
+              <img class="presence-img" src="./vendor/img/online.png"><img class="presence-img" src="./vendor/img/dnd.png"><img class="presence-img" src="./vendor/img/idle.png"><img class="presence-img" src="./vendor/img/invis.png">
+              </br>
+                Activity Name : Can Be Every Thing
+              </br>
+                Activity Type : <span>PLAYING <span style="color: red;"> / </span> LISTENING <span style="color: red;"> / </span> WATCHING</span>
+              </br>
+                <img class="type-img" src="./vendor/img/PLAYING.png"><img class="type-img" src="./vendor/img/LISTENING.png"><img class="type-img" src="./vendor/img/WATCHING.png">
+              </div>
+              <div class="tab-pane fade" id="list-end" role="tabpanel" aria-labelledby="list-end-list">Click on the red button on the end of page to close the application</br>Any Question ?! Feel Free By Sending My Massage In Discord : -its^Hadi.Az^#1405</br>Github: www.github.com/hadiazt</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="down10 input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Bot Token</span>
+          </div>
+          <input type="text" id="token" placeholder="Bot Token" class="form-control">
+        </div>
+
+        <div class="down10 input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Status <span style="color: red;"> / </span> Activity Name <span style="color: red;"> / </span> Activity Type</span>
+          </div>
+          <input type="text" id="status"  placeholder="Status" class="form-control">
+          <input type="text" id="activity_name" placeholder="Activity Name" class="form-control">
+          <input type="text" id="activity_type" placeholder="Activity Type" class="form-control">
+        </div>
+
+        <div class="down10 input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" >If Message Content </span>
+          </div>
+          <textarea class="form-control"  id="ifmsg" aria-label="With textarea"></textarea>
+        </div>
+
+        <div class="down10 input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"  >Bot Reply With</span>
+          </div>
+          <textarea class="form-control" id="msgsend" aria-label="With textarea"></textarea>
+        </div>
+
+        <div class="down10 input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Bot Owner User + tag<span style="color: red;"> / </span> Bot Owner User ID</span>
+          </div>
+          <input type="text" id="owner_name_tag"  placeholder="-its^Hadi.Az^#1405" class="form-control">
+          <input type="text" id="owner_id" placeholder="490519932292038659" class="form-control">
+        </div>
+        
+        <div class="down10">
+          <a href="#info">          
+            <button type="button" class="btn btn-success" onclick="getinfo()">login</button>
+          </a>
+          <a href="#start">          
+            <button type="button" class="btn btn-warning">Scroll Up</button>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <h1 id="info" class="title"> Presence </h1>
+
+  <div class="card-columns">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Status</h5>
+        <p class="card-text"><b id="presence"></b></p>
+      </div>
+    </div>
+
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Activity</h5>
+        <p class="card-text"><b id="activity"></b></p>
+      </div>
+    </div>
+
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Type</h5>
+        <p class="card-text"><b id="type"></b></p>
+      </div>
+    </div>
+
+</div>
+
+
+  <h1 class="title"> Stats </h1>
+
+<div class="card-columns">
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Guilds</h5>
+      <p class="card-text"><b id="guilds"></b></p>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Users</h5>
+      <p class="card-text"><b id="users"></b></p>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Channels</h5>
+      <p class="card-text"><b id="channels"></b></p>
+    </div>
+  </div>
+
+</div>
+
+<h1 class="title"> System Stats </h1>
+
+<div class="card-columns">
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">System Uptime</h5>
+      <p class="card-text"><b id="up"></b></p>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Total Memory</h5>
+      <p class="card-text"><b id="memorytotal"></b></p>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Memory Usage</h5>
+      <p class="card-text"><b id="memoryus"></b></p>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Host Name</h5>
+      <p class="card-text"><b id="hostname"></b></p>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Platform</h5>
+      <p class="card-text"><b id="platform"></b></p>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Type</h5>
+      <p class="card-text"><b id="typesys"></b></p>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="down20 container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+
+      <button type="button" class="btn btn-danger" onclick="exitapp()">Close Application</button>
+
+    </div>
+  </div>
+</div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/bot.js"></script>
+  <script>
+    //load in node libraries
+    require('./renderer.js')
+  </script>
+</body>
+
+</html>

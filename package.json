@@ -1,0 +1,28 @@
+{
+  "name": "simple-bot-creator",
+  "version": "1.0.0",
+  "description": "Simple Node.js Desktop Application For Runing Discord Bots",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/hadiazt",
+  "keywords": [
+    "Electron",
+    "Node",
+    "discord bot",
+    "discord.js"
+  ],
+  "author": "hadi-az",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "bootstrap": "4.2.1",
+    "jquery": "3.3.1"
+  },
+  "devDependencies": {
+    "browser-sync": "2.26.3",
+    "electron": "^4.0.4",
+    "electron-packager": "^15.2.0",
+    "gulp": "4.0.0"
+  }
+}
