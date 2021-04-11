@@ -42,6 +42,8 @@ module.exports = {
             method: 'GET',
             headers: { 'Authorization': 'Bot ' + token  }
         });
+            console.log(typeof res, res);
+            /*
             const data = JSON.parse(res);
             const errorCodes = [0, 400, 401, 50035];
             if(data.code && errorCodes.includes(data.code))
@@ -56,7 +58,7 @@ module.exports = {
                     username: data.username,
                     tag: data.username + data.discriminator
                 }
-            }            
+            } */           
       }
     
 }
