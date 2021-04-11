@@ -38,12 +38,12 @@ module.exports = {
       {
         if(!token) return { result: false, message: 'No token Recived.' };
         const nf = util.promisify(fetch);
-        const res = nf('https://discord.com/api/v6/users/@me', {
-            method: 'GET',
-            headers: { 'Authorization': 'Bot ' + token  }
-        });
+        try{
+            const res = nf('https://discord.com/api/v6/users/@me', {
+                  method: 'GET',
+                  headers: { 'Authorization': 'Bot ' + token  }
+            });
             console.log(typeof res, res);
-            /*
             const data = JSON.parse(res);
             const errorCodes = [0, 400, 401, 50035];
             if(data.code && errorCodes.includes(data.code))
@@ -58,7 +58,10 @@ module.exports = {
                     username: data.username,
                     tag: data.username + data.discriminator
                 }
-            } */           
+            }
+        }catch(err){
+            console.error('err: ', err);     
+        }
       }
     
 }
