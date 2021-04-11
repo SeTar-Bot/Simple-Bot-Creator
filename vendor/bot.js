@@ -66,6 +66,15 @@ function getinfo() {
       }
 
     });
+    
+    client.on('warn', warning => {
+        //TODO: Show an Error Message (warning is String)[e.g: `⚠ Warning: ${warning}`]
+    });
+
+    client.on('error', err => {
+        //TODO: Show an Error Message (Convert err to String)[e.g: `❌ Error: ${err.toString()}`]
+    });
+  
     const ramUsage = process.memoryUsage().heapUsed / 1024 / 1024;
     
     setInterval(() => {
