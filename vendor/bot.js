@@ -1,3 +1,5 @@
+const util = require("./utility");
+
 function exitapp() {
   const remote = require('electron').remote
   let w = remote.getCurrentWindow()
@@ -76,7 +78,7 @@ function getinfo() {
       document.getElementById('channels').innerHTML = client.channels.cache.size;
       document.getElementById('guilds').innerHTML = client.guilds.cache.size;  
       // 
-      document.getElementById('up').innerHTML = os.uptime();
+      document.getElementById('up').innerHTML = util.msToDate(os.uptime(), true);
       document.getElementById('memorytotal').innerHTML = os.totalmem();
       document.getElementById('memoryus').innerHTML = os.freemem();
       document.getElementById('hostname').innerHTML = os.hostname();
