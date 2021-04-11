@@ -79,7 +79,7 @@ function getinfo() {
       document.getElementById('guilds').innerHTML = client.guilds.cache.size;  
       // 
       document.getElementById('up').innerHTML = util.msToDate(os.uptime(), true);
-      document.getElementById('memorytotal').innerHTML = os.totalmem();
+      document.getElementById('memorytotal').innerHTML = util.formatBytes(os.totalmem());
       document.getElementById('memoryus').innerHTML = Math.round(ramUsage * 100) / 100+" MB"
       document.getElementById('hostname').innerHTML = os.hostname();
       document.getElementById('platform').innerHTML = os.platform();
