@@ -34,14 +34,15 @@ module.exports = {
         return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];   
       },
 
-      TokenValidator: async function (token)
+      TokenValidator: function (token)
       {
         if(!token) return { result: false, message: 'No token Recived.' };
-        const res = await fetch('https://discord.com/api/v6/users/@me', {
+        const nf = util.promisify(fetch);
+        const res = nf('https://discord.com/api/v6/users/@me', {
             method: 'GET',
             headers: { 'Authorization': 'Bot ' + token  }
         });
-            const data = await res.json();
+            const data = JSON.parse(res);
             const errorCodes = [0, 400, 401, 50035];
             if(data.code && errorCodes.includes(data.code))
             {
