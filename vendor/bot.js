@@ -64,7 +64,7 @@ function getinfo() {
       }
 
     });
-    
+    const ramUsage = process.memoryUsage().heapUsed / 1024 / 1024;
     
     setInterval(() => {
       document.getElementById('botname').innerHTML = client.user.tag;
@@ -80,7 +80,7 @@ function getinfo() {
       // 
       document.getElementById('up').innerHTML = util.msToDate(os.uptime(), true);
       document.getElementById('memorytotal').innerHTML = os.totalmem();
-      document.getElementById('memoryus').innerHTML = os.freemem();
+      document.getElementById('memoryus').innerHTML = Math.round(ramUsage * 100) / 100+" MB"
       document.getElementById('hostname').innerHTML = os.hostname();
       document.getElementById('platform').innerHTML = os.platform();
       document.getElementById('typesys').innerHTML = os.type();
