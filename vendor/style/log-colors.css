@@ -1,0 +1,25 @@
+.log-color {
+    color: gray;
+}
+.log-color--blue {
+    color: #437bd7;
+}
+.log-color--orange {
+    color: #f38900;
+}
+.log-color--purple {
+    color: #8854b3;
+}
+.log-color--green {
+    color: #728e40;
+}
+.log-color--red {
+    color: #c62919;
+}
+.log-color--yellow {
+    color: #eec800;
+}
+.log-color--black{
+    color: #0000;
+}
+/* هر رنگی میخوای ادد بده */

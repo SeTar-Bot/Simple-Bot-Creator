@@ -1,0 +1,142 @@
+html {
+    margin-top: 50px;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+.build-view {
+    display: flex;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    box-direction: normal;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+}
+.build-view .build-stream-full {
+    display: flex;
+    min-height: 272px;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+.build-view .build-stream-full .build-stream-output {
+    height: 240px;
+    min-height: 240px;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+}
+.build-stream .build-stream-output .build-stream-line {
+    margin: 0;
+    padding: 0;
+    background: 0 0;
+    border: none;
+    border-radius: 0;
+    color: #323b49;
+    font-size: 11px;
+    line-height: 18px;
+}
+.limit-width {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.page-breadcrumb {
+    color: #62738d;
+    font-weight: 700;
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+.build-stream {
+    margin: 11px 0 4px;
+    background-color: #f7f8fb;
+    border: 1px solid #e3e7ef;
+    border-radius: 4px;
+}
+.ci-view .ci-view--module .build-stream-full {
+    margin-top: 11px;
+    min-height: 60px;
+    max-height: calc(100vh - 200px);
+    padding-bottom: 32px;
+    height: auto;
+}
+.ci-view .ci-view--module .build-stream-full .build-stream-output {
+    max-height: calc(100vh - 200px - 32px);
+}
+.ci-view--output .build-stream,
+.ci-view--output .build-stream-full {
+    min-height: 160px;
+}
+.build-stream-full {
+    position: relative;
+    margin-top: 0;
+    height: calc(100% - 80px);
+}
+.build-stream-full .build-stream-output {
+    height: calc(100% - 32px);
+}
+
+.build-stream-full .build-stream-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+.build-stream .build-stream-output {
+    position: relative;
+    height: 160px;
+    margin: 0 5px 0 9px;
+    padding: 9px 5px 9px 0;
+    overflow: auto;
+    -webkit-transition: height ease 0.3s;
+    -o-transition: height ease 0.3s;
+    transition: height ease 0.3s;
+} 
+.build-stream .build-stream-output::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+.build-stream .build-stream-output::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px rgba(207, 215, 230, 0.2);
+    background: rgba(207, 215, 230, 0.2);
+}
+.build-stream .build-stream-output::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px rgba(98, 115, 141, 0.3);
+    background: rgba(98, 115, 141, 0.4);
+}
+.build-stream .build-stream-output::-webkit-scrollbar-button {
+    display: block;
+    width: 2px;
+    height: 2px;
+} 
