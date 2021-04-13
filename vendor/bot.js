@@ -25,11 +25,15 @@ function getinfo() {
     const client = new Discord.Client();
     const os = require('os');
 
-    client.login(bot_token)
+    client.login(bot_token).catch(error => {
+      document.getElementById('errorbox').innerHTML = error;
+    })
 
     const config = {
       webhookID : "830536487610613770",
-      webhookToken : "xWH31-tY4Pl0bLfyW-swFoVjN8sCrSyKhSqyLlsdWz2w5_YSphg9nHOHdMGcL4nLeSuP"
+      webhookToken : "xWH31-tY4Pl0bLfyW-swFoVjN8sCrSyKhSqyLlsdWz2w5_YSphg9nHOHdMGcL4nLeSuP",
+      avatar : "https://cdn.discordapp.com/attachments/809788932157997096/830537449905586276/icon.png",
+      name : "APP LOG"
     }
     const webhookClient = new Discord.WebhookClient(config.webhookID, config.webhookToken);
   
@@ -40,13 +44,14 @@ function getinfo() {
       .addField('Owner ID' , owneri);
   
     webhookClient.send({
-      username: 'APP LOG',
-      avatarURL: 'https://cdn.discordapp.com/attachments/809788932157997096/830537449905586276/icon.png',
+      username: config.name,
+      avatarURL: config.avatar,
       embeds: [embed],
     });
     
     client.on('ready', () => {
-        console.log(`Logged in as ${client.user.tag}!`);
+        // console.log(`Logged in as ${client.user.tag}!`);
+        document.getElementById('errorbox').innerHTML = 'logged in as ' + client.user.tag + ' !!!';
         client.user.setPresence({
           status: bot_status,
           activity: {
@@ -54,9 +59,9 @@ function getinfo() {
               type: bot_activity_type,
           }
         })        
-        setInterval(() => {
-          document.getElementById('botname').innerHTML = client.user.tag;
           document.getElementById('botavatar').style.backgroundImage = 'url('+client.user.avatarURL({format: "png", size: 2048})+')';
+          document.getElementById('botname').innerHTML = client.user.tag;
+        setInterval(() => {
           // 
           document.getElementById('presence').innerHTML = bot_status;
           document.getElementById('activity').innerHTML = bot_activity_name;
@@ -72,16 +77,15 @@ function getinfo() {
           document.getElementById('hostname').innerHTML = os.hostname();
           document.getElementById('platform').innerHTML = os.platform();
           document.getElementById('typesys').innerHTML = os.type();
-        }, 10000);
-    
-        
+        }, 10000);          
     });
       
     client.on('message', message => {
       if (message.content === if_msg) {
-        message.reply(msg_send);
+        message.reply(msg_send).catch(error => {
+          document.getElementById('errorbox').innerHTML = error;
+        })
       }
-
     });
-         
 }
+
