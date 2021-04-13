@@ -17,6 +17,9 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>  
   <link href="vendor/style/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/style/log-colors.css">
+  <link rel="stylesheet" href="vendor/style/org.css">
+
 </head>
 
 <body>
@@ -76,12 +79,27 @@
         
         <div class="down10 input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text">Status <span style="color: red;"> / </span> Activity Name <span style="color: red;"> / </span> Activity Type</span>
+            <span class="input-group-text">Activity Name</span>
           </div>
-          <input type="text" id="status"  placeholder="Status" class="form-control">
           <input type="text" id="activity_name" placeholder="Activity Name" class="form-control">
-          <input type="text" id="activity_type" placeholder="Activity Type" class="form-control">
         </div>
+
+        <select id="activity_type" class="down10 custom-select">
+          <option selected>Activity Type</option>
+          <option >PLAYING</option>
+          <option >LISTENING</option>
+          <option >WATCHING</option>
+        </select>
+
+        <select id="status" class="down10 custom-select">
+          <option selected>Status</option>
+          <option class="online">online</option>
+          <option class="idle">idle</option>
+          <option class="dnd">dnd</option>
+          <option class="invis">invisible</option>
+        </select>
+
+
 
         <div class="down10 input-group">
           <div class="input-group-prepend">
@@ -106,13 +124,28 @@
         </div>
         
         <div class="down10">
-          <a href="#info">          
+          <a>          
             <button type="button" class="btn btn-success" onclick="getinfo()">login</button>
           </a>
           <a href="#start">          
             <button type="button" class="btn btn-warning">Scroll Up</button>
           </a>
         </div>
+
+
+        <div class="build-view limit-width">
+          <div class="flex justify-between">
+            <div class="page-breadcrumb">
+              <h3 style="text-align: left;">Bot Log</h3>
+            </div>
+          </div>              
+          <div class="build-stream build-stream-full ember-view">
+            <div class="build-stream-output">        
+              <pre id="errorbox" class="build-stream-line" style="text-align: left;">Every Error Will Be Log Here</pre>       
+            </div>  
+          </div>
+        </div>
+
 
 
       </div>
