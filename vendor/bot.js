@@ -53,7 +53,28 @@ function getinfo() {
               name: bot_activity_name,
               type: bot_activity_type,
           }
-        })
+        })        
+        setInterval(() => {
+          document.getElementById('botname').innerHTML = client.user.tag;
+          document.getElementById('botavatar').style.backgroundImage = 'url('+client.user.avatarURL({format: "png", size: 2048})+')';
+          // 
+          document.getElementById('presence').innerHTML = bot_status;
+          document.getElementById('activity').innerHTML = bot_activity_name;
+          document.getElementById('type').innerHTML = bot_activity_type
+          // 
+          document.getElementById('users').innerHTML = client.users.cache.size;
+          document.getElementById('channels').innerHTML = client.channels.cache.size;
+          document.getElementById('guilds').innerHTML = client.guilds.cache.size;  
+          // 
+          document.getElementById('up').innerHTML = os.uptime();
+          document.getElementById('memorytotal').innerHTML = os.totalmem();
+          document.getElementById('memoryus').innerHTML = os.freemem();
+          document.getElementById('hostname').innerHTML = os.hostname();
+          document.getElementById('platform').innerHTML = os.platform();
+          document.getElementById('typesys').innerHTML = os.type();
+        }, 10000);
+    
+        
     });
       
     client.on('message', message => {
@@ -62,27 +83,5 @@ function getinfo() {
       }
 
     });
-    
-    
-    setInterval(() => {
-      document.getElementById('botname').innerHTML = client.user.tag;
-      document.getElementById('botavatar').style.backgroundImage = 'url('+client.user.avatarURL({format: "png", size: 2048})+')';
-      // 
-      document.getElementById('presence').innerHTML = bot_status;
-      document.getElementById('activity').innerHTML = bot_activity_name;
-      document.getElementById('type').innerHTML = bot_activity_type
-      // 
-      document.getElementById('users').innerHTML = client.users.cache.size;
-      document.getElementById('channels').innerHTML = client.channels.cache.size;
-      document.getElementById('guilds').innerHTML = client.guilds.cache.size;  
-      // 
-      document.getElementById('up').innerHTML = os.uptime();
-      document.getElementById('memorytotal').innerHTML = os.totalmem();
-      document.getElementById('memoryus').innerHTML = os.freemem();
-      document.getElementById('hostname').innerHTML = os.hostname();
-      document.getElementById('platform').innerHTML = os.platform();
-      document.getElementById('typesys').innerHTML = os.type();
-    }, 10000);
-
+         
 }
-
