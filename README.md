@@ -20,5 +20,5 @@ https://cdn.discordapp.com/attachments/829481761327022170/830144094663213086/ban
 # Change Log : </br>
 ╔══════════ 13 April 2021 ════════════╗ </br>
 `-` UI Updated (Better Choosing System) </br>
-`-` Show Errors & Warnings In Box (Application) </br>
+`-` Added ot Log (Server Add | Server Kick | Message Recived) </br>
 `-` Better Data Catching <br>
